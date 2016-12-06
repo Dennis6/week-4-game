@@ -4,10 +4,10 @@ div{
 	border: solid 1px black;
 	padding: 5px;
 }
-.gems{
+.crystals{
 	clear: both;
 }
-.gemImage{
+.crystalImage{
 	height: 60px;
 	margin: 20px;
 }
@@ -23,16 +23,16 @@ h1, h3, span{
 }
 
 
-div.header, div.instructions{
+div.name, div.task{
 	width: 50%;
 }
 
-.numberToMatch, .winsAndLosses{
+ .game{
 	float: left;
 	width: 20%;
 	height: 60px;
 }
-.userTotal{
+.gamePoints{
 	width: 25%;
 	height: 60px;
 }

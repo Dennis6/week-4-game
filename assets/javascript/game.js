@@ -1,102 +1,85 @@
 $( document ).ready(function(){
-  var Random=Math.floor(Math.random()*101+19)
-  $('#randomNumber').text(Random);
-var num1= Math.floor(Math.random()*11+1)
-var num2= Math.floor(Math.random()*11+1)
-var num3= Math.floor(Math.random()*11+1)
-var num4= Math.floor(Math.random()*11+1)
-var userTotal= 0; 
-var wins= 0;
-var losses = 0;
-$('#numberWins').text(wins);
-$('#numberLosses').text(losses);
-function reset(){
-      Random=Math.floor(Math.random()*101+19);
-      console.log(Random)
-      $('#randomNumber').text(Random);
-      num1= Math.floor(Math.random()*11+1);
-      num2= Math.floor(Math.random()*11+1);
-      num3= Math.floor(Math.random()*11+1);
-      num4= Math.floor(Math.random()*11+1);
-      userTotal= 0;
-      $('#finalTotal').text(userTotal);
-      } 
-
-
-
-
-
-
-
-
-
-function yay(){
-alert("congratulations you won!");
-  wins++; 
-  $('#numberWins').text(wins);
-  reset();
-}
-
-function loser(){
-alert ("congratulations you played yourself!");
-  losses++;
-  $('#numberLosses').text(losses);
-  reset()
-}
-
-
-
-
-
-
-
-
+  var startGame=Math.floor(Math.random()*101+19)
+  $('#gamePoints').text(startGame);
 
 $('#one').on ('click', function(){
-    userTotal = userTotal + num1;
-    console.log("New userTotal= " + userTotal);
-    $('#finalTotal').text(userTotal); 
+    total = total + gemone;
+    console.log("New total= " + total);
+    $('#finalTotal').text(total); 
 
-    if (userTotal == Random){
-          yay();
+    if (total == startGame){
+          winner();
         }
-        else if ( userTotal > Random){
+        else if ( total > startGame){
           loser();
         }   
   })  
   $('#two').on ('click', function(){
-    userTotal = userTotal + num2;
-    console.log("New userTotal= " + userTotal);
-    $('#finalTotal').text(userTotal); 
-        if (userTotal == Random){
-          yay();
+    total = total + gemtwo;
+    console.log("New userTotal= " + total);
+    $('#finalTotal').text(total); 
+        if (total == startGame){
+          winner();
         }
-        else if ( userTotal > Random){
+        else if ( total > startGame){
           loser();
         } 
   })  
   $('#three').on ('click', function(){
-    userTotal = userTotal + num3;
-    console.log("New userTotal= " + userTotal);
-    $('#finalTotal').text(userTotal);
+    total = total + gemthree;
+    console.log("New userTotal= " + total);
+    $('#finalTotal').text(total);
 
-    if (userTotal == Random){
-          yay();
+    if (total == startGame){
+          winner();
         }
-        else if ( userTotal > Random){
+        else if ( total > startGame){
           loser();
         } 
   })  
   $('#four').on ('click', function(){
-    userTotal = userTotal + num4;
-    console.log("New userTotal= " + userTotal);
-    $('#finalTotal').text(userTotal); 
+    total = total + gemfour;
+    console.log("New userTotal= " + total);
+    $('#finalTotal').text(total); 
       
-          if (userTotal == Random){
-          yay();
+          if (total == startGame){
+          winner();
         }
-        else if ( userTotal > Random){
+        else if ( total > startGame){
           loser();
         }
   });   
+var gemone= Math.floor(Math.random()*11+1)
+var gemtwo= Math.floor(Math.random()*11+1)
+var gemthree= Math.floor(Math.random()*11+1)
+var gemfour= Math.floor(Math.random()*11+1)
+var total= 0; 
+var wins= 0;
+var losses = 0;
+$('#wins').text(wins);
+$('#losses').text(losses);
+    function reset(){
+      startGame=Math.floor(Math.random()*101+19);
+        console.log(startGame)
+$('#gamePoints').text(startGame);
+      gemone= Math.floor(Math.random()*11+1);
+      gemtwo= Math.floor(Math.random()*11+1);
+      gemthree= Math.floor(Math.random()*11+1);
+      gemfour= Math.floor(Math.random()*11+1);
+      total= 0;
+      $('#finalTotal').text(total);
+      } 
+
+      function winner(){
+alert("congratulations you won!");
+  wins++; 
+  $('#wins').text(wins);
+  reset();
+}
+function loser(){
+alert ("congratulations you played yourself!");
+  losses++;
+  $('#losses').text(losses);
+  reset()
+}
 }); 
